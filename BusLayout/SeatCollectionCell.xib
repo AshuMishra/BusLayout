@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="seatCell" id="gTV-IL-0wX" customClass="SeatCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WD8-4Z-Qrh">
+                        <rect key="frame" x="5" y="0.0" width="40" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="l31-5B-R99"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="WD8-4Z-Qrh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3wI-ci-Et2"/>
+                <constraint firstItem="WD8-4Z-Qrh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Csc-Kp-tOd"/>
+                <constraint firstItem="WD8-4Z-Qrh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lsw-sJ-N2M"/>
+                <constraint firstAttribute="bottom" secondItem="WD8-4Z-Qrh" secondAttribute="bottom" id="aMv-ju-aHO"/>
+                <constraint firstAttribute="trailing" secondItem="WD8-4Z-Qrh" secondAttribute="trailing" id="uh4-xu-iw7"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Lsw-sJ-N2M"/>
+                    <exclude reference="uh4-xu-iw7"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageView" destination="WD8-4Z-Qrh" id="ite-h8-9JN"/>
+            </connections>
+            <point key="canvasLocation" x="38" y="114"/>
+        </collectionViewCell>
+    </objects>
+</document>
