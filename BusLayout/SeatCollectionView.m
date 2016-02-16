@@ -38,13 +38,14 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 	NSInteger segments = [self.datasource numberOfSegments];
-	NSMutableArray *array = [NSMutableArray arrayWithCapacity:segments];
+	NSMutableArray *array = [NSMutableArray array];
+
 	NSInteger sections = 0;
 	for (int i = 0; i < segments; i++) {
-		NSInteger sectionPersegment = [self.datasource seatCollectionView:self numberOfSectionsForSegment:i];
-		sections += sectionPersegment;
-		for (int j = 0; j < sectionPersegment; j++) {
-			[array addObject:[NSNumber numberWithInteger:j]];
+		NSInteger sectionPerSegment = [self.datasource seatCollectionView:self numberOfSectionsForSegment:i];
+		sections += sectionPerSegment;
+		for (int j = 0; j < sectionPerSegment; j++) {
+			[array addObject:[NSNumber numberWithInteger:i]];
 		}
 	}
 	self.flowLayout.segmentIndexForSection = array;

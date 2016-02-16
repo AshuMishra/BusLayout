@@ -25,34 +25,29 @@
 	self.frameForIndexPath = [NSMutableDictionary dictionary];
 
 	CGFloat originX = 0.0;
-		for(NSUInteger section = 0; section < self.collectionView.numberOfSections; section++) {
-			NSInteger segment = [self.segmentIndexForSection[section] integerValue];
-			CGFloat startingX = 0;
-			CGFloat originY = 0.0;
-			CGFloat width = (self.collectionView.frame.size.width -  20 * segment)/ [self.collectionView numberOfSections];
-//			CGFloat width = 40.0;
+	for(NSUInteger section = 0; section < self.collectionView.numberOfSections; section++) {
+		NSInteger segment = [self.segmentIndexForSection[section] integerValue];
+		CGFloat startingX = segment * self.interSegmentSpace;
+		CGFloat originY = 0.0;
 
-//			CGFloat originX =  startingX + section * width;
-			originX = width * section;
-			if (segment == 1) {
+		CGFloat width = (self.collectionView.frame.size.width - self.interSegmentSpace)/ [self.collectionView numberOfSections];
+		originX = startingX + section * width;
 
+		for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
+			CGSize size;
+			NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
+
+			if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)]) {
+				id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
+				size = [delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
 			}
-			for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
-				CGSize size;
-				NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
-
-				if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)]) {
-					id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
-					size = [delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
-				}
-				else {
-					size = self.itemSize;
-				}
-				CGRect cellFrame = CGRectMake(originX, originY, width, size.height);
-				originY +=  size.height;
-				[self.frameForIndexPath setObject:NSStringFromCGRect(cellFrame) forKey:indexPath];
+			else {
+				size = self.itemSize;
 			}
-			NSLog(@"origin x = %f",originX);
+			CGRect cellFrame = CGRectMake(originX, originY, width, size.height);
+			originY +=  size.height;
+			[self.frameForIndexPath setObject:NSStringFromCGRect(cellFrame) forKey:indexPath];
+		}
 	}
 }
 
