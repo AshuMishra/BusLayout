@@ -14,17 +14,19 @@
 @interface SeatCollectionView : UIView
 
 @property (nonatomic, assign) id<SeatCollectionViewDatasource> datasource;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic)  UICollectionView *collectionView;
+
+- (void)reloadSeatCollectionView;
 
 @end
 
 @protocol SeatCollectionViewDatasource
 
 - (NSInteger)numberOfSegments;
-- (NSInteger)seatCollectionView:(SeatCollectionView *)colelctionView numberOfSectionsForSegment:(NSInteger) segment;
+- (NSInteger)seatCollectionView:(SeatCollectionView *)collectionView numberOfSectionsForSegment:(NSInteger) segment;
 - (NSInteger)maximumNumberOfItemsPerSection;
 
-- (SeatType)seatCollectionView:(SeatCollectionView *)colelctionView seatTypeforIndexPath: (NSIndexPath *)indexPath;
-- (NSString *)seatCollectionView:(SeatCollectionView *)colelctionView seatNameforIndexPath: (NSIndexPath *)indexPath;
+- (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath: (NSIndexPath *)indexPath;
+- (NSString *)seatCollectionView:(SeatCollectionView *)collectionView seatNameforIndexPath: (NSIndexPath *)indexPath;
 
 @end

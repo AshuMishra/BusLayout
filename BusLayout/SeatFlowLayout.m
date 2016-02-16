@@ -31,6 +31,7 @@
 		CGFloat originY = 0.0;
 
 		CGFloat width = (self.collectionView.frame.size.width - self.interSegmentSpace)/ [self.collectionView numberOfSections];
+		NSLog(@"width = %f", self.collectionView.frame.size.width);
 		originX = startingX + section * width;
 
 		for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {

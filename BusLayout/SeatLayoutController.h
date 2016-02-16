@@ -11,7 +11,8 @@
 
 @interface SeatLayoutController : UIViewController
 
-@property (weak, nonatomic) IBOutlet SeatCollectionView *seatCollectionView;
+@property (weak, nonatomic) IBOutlet SeatCollectionView *lowerSeatCollectionView;
+@property (weak, nonatomic) IBOutlet SeatCollectionView *upperSeatCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *priceCollectionView;
 
 @end

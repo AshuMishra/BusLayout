@@ -24,6 +24,12 @@
 	self.imageView.image = [self imageForSeatType:type status:status];
 }
 
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	self.layer.borderColor = [UIColor redColor].CGColor;
+	self.layer.borderWidth = 2.0;
+}
+
 - (UIImage *)imageForSeatType:(SeatType)type status:(SeatStatus) status {
 	_type = type;
 	if(type == SeatTypeSeater) {

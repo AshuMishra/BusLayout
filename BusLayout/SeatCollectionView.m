@@ -20,19 +20,29 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
+	self.flowLayout = [[SeatFlowLayout alloc]init];
+	self.flowLayout.interSegmentSpace = 50.0;
+	self.collectionView.collectionViewLayout = self.flowLayout;
+	self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
+											collectionViewLayout:self.flowLayout];
 	self.collectionView.delegate = self;
 	self.collectionView.dataSource = self;
+	[self addSubview:self.collectionView];
 	UINib *nib = [UINib nibWithNibName:@"SeatCollectionCell" bundle:[NSBundle mainBundle]];
 	[self.collectionView registerClass:[SeatCollectionCell class] forCellWithReuseIdentifier:@"seatCell"];
 	[self.collectionView registerNib:nib forCellWithReuseIdentifier:@"seatCell"];
-	self.flowLayout = [[SeatFlowLayout alloc]init];
-	self.flowLayout.interSegmentSpace = 40.0;
-	self.collectionView.collectionViewLayout = self.flowLayout;
 }
+
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
 	return CGSizeMake(50, type == SeatTypeSleeper ? 75 : 50);
+}
+
+- (void)reloadSeatCollectionView {
+	self.collectionView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+	[self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 #pragma mark - UICollectionViewDatasource
@@ -59,14 +69,11 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	SeatCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"seatCell" forIndexPath:indexPath];
-//	UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5, 5, cell.frame.size.width - 10, cell.frame.size.height-10)];
+	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"seatCell" forIndexPath:indexPath];
 	NSString *seatName = [self.datasource seatCollectionView:self seatNameforIndexPath:indexPath];
 	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
 	cell.type = type;
 	[cell setType:type status:SeatStatusAvailable];
-//	label.text = seatName;
-//	[cell.contentView addSubview:label];
 	return cell;
 }
 
