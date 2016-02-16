@@ -10,4 +10,13 @@
 
 @interface Seat : NSObject
 
+@property(nonatomic, assign) NSInteger rowNumber;
+@property(nonatomic, assign) NSInteger columnNumber;
+@property(nonatomic, assign) NSInteger deckNumber;
+@property(nonatomic, assign) NSString *seatName;
+//@property(nonatomic, assign) NSInteger SeatStatus;
+@property(nonatomic, assign) NSString *seatType;
+@property(nonatomic, assign) NSString *seatStatus;
+
++ (NSArray *)seatsFromArray:(NSArray *)seatInfo;
 @end

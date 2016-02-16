@@ -14,11 +14,18 @@
 
 @implementation SeatCollectionCell
 
+- (void)setSelected:(BOOL)selected {
+	[super setSelected:selected];
+	[self setType:self.type status:selected ? SeatStatusBooked : SeatStatusAvailable];
+}
+
+
 - (void)setType:(SeatType)type status:(SeatStatus) status {
 	self.imageView.image = [self imageForSeatType:type status:status];
 }
 
 - (UIImage *)imageForSeatType:(SeatType)type status:(SeatStatus) status {
+	_type = type;
 	if(type == SeatTypeSeater) {
 		switch (status) {
 			case SeatStatusAvailable:

@@ -26,6 +26,7 @@
 	[self.collectionView registerClass:[SeatCollectionCell class] forCellWithReuseIdentifier:@"seatCell"];
 	[self.collectionView registerNib:nib forCellWithReuseIdentifier:@"seatCell"];
 	self.flowLayout = [[SeatFlowLayout alloc]init];
+	self.flowLayout.interSegmentSpace = 40.0;
 	self.collectionView.collectionViewLayout = self.flowLayout;
 }
 
@@ -66,8 +67,22 @@
 	[cell setType:type status:SeatStatusAvailable];
 //	label.text = seatName;
 //	[cell.contentView addSubview:label];
-
 	return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
+	cell.selected = YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
+	return (type == SeatStatusAvailable);
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
+	return (type == SeatStatusAvailable);
 }
 
 @end
