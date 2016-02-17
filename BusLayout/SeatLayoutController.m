@@ -9,13 +9,15 @@
 #import "SeatLayoutController.h"
 #import "PriceCell.h"
 #import "Seat.h"
+#define MaximumAllowedSelection 6
 
 @interface SeatLayoutController()<SeatCollectionViewDatasource>
 
 @property (nonatomic, strong) NSMutableArray * priceArray;
 @property (nonatomic, strong) NSArray * seatsArray;
 @property (nonatomic, strong) NSArray * upperSeatsArray;
-
+@property (nonatomic, strong) NSMutableArray *indexPathsForUpperSelectedSeats;
+@property (nonatomic, strong) NSMutableArray *indexPathsForLowerSelectedSeats;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @end
@@ -150,14 +152,17 @@
 //	return  size;
 //}
 
--(void)collectionView: (UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-
+- (void)collectionView: (UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+	if (self.indexPathsForLowerSelectedSeats.count + self.indexPathsForUpperSelectedSeats.count == MaximumAllowedSelection) {
+		return;
+	}
+	// If seat type is SeatStatusBooked, return
+	// else select and save in indexPathsForLowerSelectedSeats/indexPathsForUpperSelectedSeats
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
 	NSInteger cellCount = [collectionView.dataSource collectionView:collectionView numberOfItemsInSection:section];
-	if( cellCount >0 )
+	if( cellCount > 0 )
 	{
 		CGFloat cellWidth = ((UICollectionViewFlowLayout*)collectionViewLayout).itemSize.width+((UICollectionViewFlowLayout*)collectionViewLayout).minimumInteritemSpacing;
 		CGFloat totalCellWidth = cellWidth*cellCount;
