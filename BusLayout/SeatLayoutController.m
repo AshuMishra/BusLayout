@@ -33,8 +33,8 @@
 
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
-	[self.lowerSeatCollectionView reloadSeatCollectionView];
-	[self.upperSeatCollectionView reloadSeatCollectionView];
+	[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
+	[self.upperSeatCollectionView reloadSeatCollectionViewWithHeader:NO];
 }
 
 - (void)configureData {

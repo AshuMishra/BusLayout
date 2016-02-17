@@ -13,6 +13,7 @@
 @interface SeatCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) SeatFlowLayout *flowLayout;
+@property (nonatomic, strong) UIView *headerView;
 
 @end
 
@@ -31,18 +32,27 @@
 	UINib *nib = [UINib nibWithNibName:@"SeatCollectionCell" bundle:[NSBundle mainBundle]];
 	[self.collectionView registerClass:[SeatCollectionCell class] forCellWithReuseIdentifier:@"seatCell"];
 	[self.collectionView registerNib:nib forCellWithReuseIdentifier:@"seatCell"];
+	[self.flowLayout registerNib:[UINib nibWithNibName:@"DriverSeatView" bundle:nil] forDecorationViewOfKind:@"DriverSeatView"];
+
 }
-
-
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
 	return CGSizeMake(50, type == SeatTypeSleeper ? 75 : 50);
 }
 
-- (void)reloadSeatCollectionView {
+- (void)reloadSeatCollectionViewWithHeader:(BOOL)showHeader {
 	self.collectionView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
 	[self.collectionView.collectionViewLayout invalidateLayout];
+	if(showHeader) {
+		if(![self.subviews containsObject:self.headerView]) {
+			self.headerView = [[[NSBundle mainBundle]loadNibNamed:@"DriverSeatView" owner:self options:nil]firstObject];
+			[self.collectionView addSubview: self.headerView];
+			}
+
+		self.collectionView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+		self.headerView.frame = CGRectMake(0, -50, CGRectGetWidth(self.frame), 50);
+	}
 }
 
 #pragma mark - UICollectionViewDatasource

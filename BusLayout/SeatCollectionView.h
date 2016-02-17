@@ -16,7 +16,7 @@
 @property (nonatomic, assign) id<SeatCollectionViewDatasource> datasource;
 @property (strong, nonatomic)  UICollectionView *collectionView;
 
-- (void)reloadSeatCollectionView;
+- (void)reloadSeatCollectionViewWithHeader:(BOOL)showHeader;
 
 @end
 

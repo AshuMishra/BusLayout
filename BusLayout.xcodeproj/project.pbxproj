@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E2B632D1C72522E00D4CA3E /* Seat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B632C1C72522E00D4CA3E /* Seat.m */; };
+		4E2B63371C73B27000D4CA3E /* DriverSeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */; };
 		4EED68171C6F72C100C6479A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68161C6F72C100C6479A /* main.m */; };
 		4EED681A1C6F72C100C6479A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68191C6F72C100C6479A /* AppDelegate.m */; };
 		4EED681D1C6F72C100C6479A /* SeatLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED681C1C6F72C100C6479A /* SeatLayoutController.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		4E2B632B1C72522E00D4CA3E /* Seat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seat.h; sourceTree = "<group>"; };
 		4E2B632C1C72522E00D4CA3E /* Seat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seat.m; sourceTree = "<group>"; };
+		4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriverSeatView.xib; sourceTree = "<group>"; };
 		4EED68121C6F72C000C6479A /* BusLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EED68161C6F72C100C6479A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EED68181C6F72C100C6479A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				4EED684E1C6FA11800C6479A /* SeatCollectionCell.h */,
 				4EED684F1C6FA11800C6479A /* SeatCollectionCell.m */,
 				4EED68501C6FA11800C6479A /* SeatCollectionCell.xib */,
+				4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */,
 			);
 			name = "StoryBoard And Custom Views";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				4EED68521C6FA11800C6479A /* SeatCollectionCell.xib in Resources */,
 				4EED68251C6F72C100C6479A /* LaunchScreen.storyboard in Resources */,
+				4E2B63371C73B27000D4CA3E /* DriverSeatView.xib in Resources */,
 				4EED68221C6F72C100C6479A /* Assets.xcassets in Resources */,
 				4EED68201C6F72C100C6479A /* Main.storyboard in Resources */,
 			);
