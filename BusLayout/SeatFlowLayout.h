@@ -12,8 +12,5 @@
 
 @interface SeatFlowLayout : UICollectionViewFlowLayout
 
-@property (nonatomic, strong) NSArray *segmentIndexForSection;
-@property (nonatomic, assign) CGFloat interSegmentSpace;
-
 @end
 

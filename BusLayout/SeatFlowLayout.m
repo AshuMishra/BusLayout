@@ -26,11 +26,10 @@
 
 	CGFloat originX = 0.0;
 	for(NSUInteger section = 0; section < self.collectionView.numberOfSections; section++) {
-		NSInteger segment = [self.segmentIndexForSection[section] integerValue];
-		CGFloat startingX = segment * self.interSegmentSpace;
+		CGFloat startingX = 0;
 		CGFloat originY = 0.0;
 
-		CGFloat width = (self.collectionView.frame.size.width - self.interSegmentSpace)/ [self.collectionView numberOfSections];
+		CGFloat width = self.collectionView.frame.size.width / [self.collectionView numberOfSections];
 		originX = startingX + section * width;
 
 		for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {

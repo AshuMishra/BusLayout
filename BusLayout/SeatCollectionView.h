@@ -22,8 +22,7 @@
 
 @protocol SeatCollectionViewDatasource
 
-- (NSInteger)numberOfSegments;
-- (NSInteger)seatCollectionView:(SeatCollectionView *)collectionView numberOfSectionsForSegment:(NSInteger) segment;
+- (NSInteger)numberOfSections;
 - (NSInteger)maximumNumberOfItemsPerSection;
 
 - (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath: (NSIndexPath *)indexPath;

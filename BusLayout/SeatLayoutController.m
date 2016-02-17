@@ -67,24 +67,8 @@
 	}
 }
 
-- (NSInteger)numberOfSegments {
-	return 2;
-}
-
-- (NSInteger)seatCollectionView:(SeatCollectionView *)collectionView numberOfSectionsForSegment:(NSInteger) segment {
-	switch (segment) {
-		case 0:
-			return 3;
-			break;
-			
-		case 1:
-			return 2;
-			break;
-
-  		default:
-			return 0;
-			break;
-	}
+- (NSInteger)numberOfSections {
+	return 6;
 }
 
 - (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath:(NSIndexPath *)indexPath {

@@ -22,7 +22,6 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	self.flowLayout = [[SeatFlowLayout alloc]init];
-	self.flowLayout.interSegmentSpace = 50.0;
 	self.collectionView.collectionViewLayout = self.flowLayout;
 	self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
 											collectionViewLayout:self.flowLayout];
@@ -58,18 +57,7 @@
 #pragma mark - UICollectionViewDatasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-	NSInteger segments = [self.datasource numberOfSegments];
-	NSMutableArray *array = [NSMutableArray array];
-
-	NSInteger sections = 0;
-	for (int i = 0; i < segments; i++) {
-		NSInteger sectionPerSegment = [self.datasource seatCollectionView:self numberOfSectionsForSegment:i];
-		sections += sectionPerSegment;
-		for (int j = 0; j < sectionPerSegment; j++) {
-			[array addObject:[NSNumber numberWithInteger:i]];
-		}
-	}
-	self.flowLayout.segmentIndexForSection = array;
+	NSInteger sections = [self.datasource numberOfSections];
 	[self.flowLayout invalidateLayout];
 	return sections;
 }
