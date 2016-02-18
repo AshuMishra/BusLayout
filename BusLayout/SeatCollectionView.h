@@ -18,6 +18,7 @@
 @property (strong, nonatomic)  UICollectionView *collectionView;
 
 - (void)reloadSeatCollectionViewWithHeader:(BOOL)showHeader;
+- (NSArray *)selectedIndexPaths;
 
 @end
 
@@ -29,5 +30,6 @@
 - (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath: (NSIndexPath *)indexPath;
 - (SeatStatus)seatCollectionView:(SeatCollectionView *)collectionView seatStatusforIndexPath: (NSIndexPath *)indexPath;
 - (NSString *)seatCollectionView:(SeatCollectionView *)collectionView seatNameforIndexPath: (NSIndexPath *)indexPath;
+- (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldSelectIndexPath: (NSIndexPath *)indexPath;
 
 @end

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) SeatFlowLayout *flowLayout;
 @property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) NSMutableArray *selectedArray;
 
 @end
 
@@ -21,6 +22,7 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
+	self.selectedArray = [NSMutableArray array];
 	self.flowLayout = [[SeatFlowLayout alloc]init];
 	self.collectionView.collectionViewLayout = self.flowLayout;
 	self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
@@ -34,6 +36,10 @@
 	[self.collectionView registerClass:[SeatCollectionCell class] forCellWithReuseIdentifier:@"seatCell"];
 	[self.collectionView registerNib:nib forCellWithReuseIdentifier:@"seatCell"];
 	[self.flowLayout registerNib:[UINib nibWithNibName:@"DriverSeatView" bundle:nil] forDecorationViewOfKind:@"DriverSeatView"];
+}
+
+- (NSArray *)selectedIndexPaths {
+	return self.selectedArray;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,16 +93,24 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
 	cell.selected = YES;
+	[self.selectedArray addObject:indexPath];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	BOOL shouldSelect = [self.datasource seatCollectionView:self shouldSelectIndexPath:indexPath];
 	SeatStatus status = [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
-	return (status == SeatStatusAvailable);
+	return (status == SeatStatusAvailable)&& shouldSelect;
 }
 
-//- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-//	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
-//	return (type == SeatStatusAvailable);
-//}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+	if ([self.selectedArray containsObject:indexPath])  {
+		[self.selectedArray removeObject:indexPath];
+		SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
+		cell.selected = NO;
+		return YES;
+	} else {
+		return NO;
+	}
+}
 
 @end

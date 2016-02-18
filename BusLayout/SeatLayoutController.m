@@ -116,6 +116,10 @@
 	return 11;
 }
 
+- (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldSelectIndexPath:(NSIndexPath *)indexPath {
+	return (self.lowerSeatCollectionView.selectedIndexPaths.count + self.upperSeatCollectionView.selectedIndexPaths.count < MaximumAllowedSelection);
+}
+
 #pragma mark - UICollectionViewDatasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -148,13 +152,6 @@
 //}
 
 - (void)collectionView: (UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-	if (self.indexPathsForLowerSelectedSeats.count + self.indexPathsForUpperSelectedSeats.count == MaximumAllowedSelection) {
-		return;
-	}
-	SeatModel *seat = [self seatForIndexPath:indexPath];
-	if (seat.seat_Status == SeatStatusAvailable) {
-
-	}
 	// If seat type is SeatStatusBooked, return
 	// else select and save in indexPathsForLowerSelectedSeats/indexPathsForUpperSelectedSeats
 }
