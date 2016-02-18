@@ -10,18 +10,34 @@
 
 @interface SeatCollectionCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *seatNameLabel;
 @end
 
 @implementation SeatCollectionCell
 
-- (void)setSelected:(BOOL)selected {
-	[super setSelected:selected];
-	[self setType:self.type status:selected ? SeatStatusBooked : SeatStatusAvailable];
+- (void)prepareForReuse {
+	[super prepareForReuse];
+	self.imageView.image = nil;
 }
 
+- (void)setSelected:(BOOL)selected {
+	[super setSelected:selected];
+	if (selected) {
+		self.imageView.image = [UIImage imageNamed:@"seat-selected"];
+	}else {
+		self.imageView.image = [self imageForSeatType:self.type status:self.status];
+	}
+}
 
-- (void)setType:(SeatType)type status:(SeatStatus) status {
-	self.imageView.image = [self imageForSeatType:type status:status];
+- (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name {
+	_type = type;
+	_status = status;
+	if (self.selected) {
+		self.imageView.image = [UIImage imageNamed:@"seat-selected"];
+	}else {
+		self.imageView.image = [self imageForSeatType:self.type status:self.status];
+	}
+	self.seatNameLabel.text = name;
 }
 
 - (void)awakeFromNib {
@@ -40,8 +56,8 @@
 				return [UIImage imageNamed:@"seat-inactive"];
 			case SeatStatusLadies:
 				return [UIImage imageNamed:@"seat-ladies"];
-			case SeatStatusSelected:
-				return [UIImage imageNamed:@"seat-selected"];
+			case SeatStatusNone:
+				return nil;
 		}
 
 	}else if (type == SeatTypeSleeper) {
@@ -52,8 +68,8 @@
 				return [UIImage imageNamed:@"sleeper-inactive"];
 			case SeatStatusLadies:
 				return [UIImage imageNamed:@"sleeper-ladies"];
-			case SeatStatusSelected:
-				return [UIImage imageNamed:@"sleeper-selected"];
+			case SeatStatusNone:
+				return nil;
 
 		}
 	}

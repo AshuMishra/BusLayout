@@ -19,6 +19,12 @@
                             <constraint firstAttribute="width" constant="40" id="l31-5B-R99"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7o-yA-Akv">
+                        <rect key="frame" x="4" y="15" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -27,6 +33,8 @@
                 <constraint firstItem="WD8-4Z-Qrh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3wI-ci-Et2"/>
                 <constraint firstItem="WD8-4Z-Qrh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Csc-Kp-tOd"/>
                 <constraint firstItem="WD8-4Z-Qrh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lsw-sJ-N2M"/>
+                <constraint firstItem="U7o-yA-Akv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Tsu-BK-sCP"/>
+                <constraint firstItem="U7o-yA-Akv" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="UUC-bt-fRE"/>
                 <constraint firstAttribute="bottom" secondItem="WD8-4Z-Qrh" secondAttribute="bottom" id="aMv-ju-aHO"/>
                 <constraint firstAttribute="trailing" secondItem="WD8-4Z-Qrh" secondAttribute="trailing" id="uh4-xu-iw7"/>
             </constraints>
@@ -38,6 +46,7 @@
             </variation>
             <connections>
                 <outlet property="imageView" destination="WD8-4Z-Qrh" id="ite-h8-9JN"/>
+                <outlet property="seatNameLabel" destination="U7o-yA-Akv" id="hXC-w4-tp0"/>
             </connections>
             <point key="canvasLocation" x="38" y="114"/>
         </collectionViewCell>

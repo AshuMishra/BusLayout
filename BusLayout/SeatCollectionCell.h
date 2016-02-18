@@ -18,13 +18,14 @@ typedef NS_ENUM(NSInteger, SeatStatus) {
 	SeatStatusAvailable,
 	SeatStatusLadies,
 	SeatStatusBooked,
-	SeatStatusSelected
+	SeatStatusNone
 };
 
 @interface SeatCollectionCell : UICollectionViewCell
 
 @property (nonatomic, assign) SeatType type;
+@property (nonatomic, assign) SeatStatus status;
 
-- (void)setType:(SeatType)type status:(SeatStatus) status;
+- (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name;
 
 @end
