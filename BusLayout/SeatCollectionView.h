@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SeatCollectionCell.h"
+#import "SeatModel.h"
 
 @protocol SeatCollectionViewDatasource;
 
@@ -26,6 +27,7 @@
 - (NSInteger)maximumNumberOfItemsPerSection;
 
 - (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath: (NSIndexPath *)indexPath;
+- (SeatStatus)seatCollectionView:(SeatCollectionView *)collectionView seatStatusforIndexPath: (NSIndexPath *)indexPath;
 - (NSString *)seatCollectionView:(SeatCollectionView *)collectionView seatNameforIndexPath: (NSIndexPath *)indexPath;
 
 @end
