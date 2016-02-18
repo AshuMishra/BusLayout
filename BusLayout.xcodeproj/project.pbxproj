@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1BC5ED1C74F65100E8F0A1 /* SeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */; };
 		4E2B632D1C72522E00D4CA3E /* Seat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B632C1C72522E00D4CA3E /* Seat.m */; };
 		4E2B63371C73B27000D4CA3E /* DriverSeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */; };
 		4EED68171C6F72C100C6479A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68161C6F72C100C6479A /* main.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E1BC5EB1C74F65100E8F0A1 /* SeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeatModel.h; sourceTree = "<group>"; };
+		4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeatModel.m; sourceTree = "<group>"; };
 		4E2B632B1C72522E00D4CA3E /* Seat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seat.h; sourceTree = "<group>"; };
 		4E2B632C1C72522E00D4CA3E /* Seat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seat.m; sourceTree = "<group>"; };
 		4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriverSeatView.xib; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 		4EED684A1C6F730000C6479A /* StoryBoard And Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E1BC5EB1C74F65100E8F0A1 /* SeatModel.h */,
+				4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */,
 				4EED681E1C6F72C100C6479A /* Main.storyboard */,
 				4EED68231C6F72C100C6479A /* LaunchScreen.storyboard */,
 				4EED68581C70A7AC00C6479A /* PriceCell.h */,
@@ -283,6 +288,7 @@
 				4EED681D1C6F72C100C6479A /* SeatLayoutController.m in Sources */,
 				4EED681A1C6F72C100C6479A /* AppDelegate.m in Sources */,
 				4EED68541C6FA52C00C6479A /* SeatFlowLayout.m in Sources */,
+				4E1BC5ED1C74F65100E8F0A1 /* SeatModel.m in Sources */,
 				4EED68171C6F72C100C6479A /* main.m in Sources */,
 				4EED685A1C70A7AC00C6479A /* PriceCell.m in Sources */,
 				4EED68511C6FA11800C6479A /* SeatCollectionCell.m in Sources */,
