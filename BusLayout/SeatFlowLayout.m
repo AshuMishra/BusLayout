@@ -20,18 +20,23 @@
 
 @implementation SeatFlowLayout
 
+- (void)setFillType:(SeatFillType)fillType {
+	_fillType = fillType;
+	[self invalidateLayout];
+}
+
 - (void)prepareLayout {
 	[super prepareLayout];
 	self.frameForIndexPath = [NSMutableDictionary dictionary];
+	CGFloat width = self.collectionView.frame.size.width / [self.collectionView numberOfSections];
 
 	CGFloat originX = 0.0;
 	for(NSUInteger section = 0; section < self.collectionView.numberOfSections; section++) {
-		CGFloat startingX = 0;
+		CGFloat startingX = self.fillType == SeatFillTypeLeft ? 0.0 : CGRectGetMaxX(self.collectionView.frame);
 		CGFloat originY = 0.0;
 
-		CGFloat width = self.collectionView.frame.size.width / [self.collectionView numberOfSections];
-		originX = startingX + section * width;
-
+		originX = self.fillType == SeatFillTypeLeft ? (startingX + section * width) : startingX - (section + 1) * width;
+		NSLog(@"origin X = %f", originX);
 		for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
 			CGSize size;
 			NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];

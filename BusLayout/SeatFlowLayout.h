@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SeatFlowLayoutDelegate;
+typedef NS_ENUM(NSInteger, SeatFillType) {
+	SeatFillTypeRight,
+	SeatFillTypeLeft,
+};
 
 @interface SeatFlowLayout : UICollectionViewFlowLayout
+
+@property(nonatomic, assign) SeatFillType fillType;
 
 @end
 
