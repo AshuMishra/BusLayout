@@ -36,7 +36,6 @@
 		CGFloat originY = 0.0;
 
 		originX = self.fillType == SeatFillTypeLeft ? (startingX + section * width) : startingX - (section + 1) * width;
-		NSLog(@"origin X = %f", originX);
 		for(NSUInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
 			CGSize size;
 			NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];

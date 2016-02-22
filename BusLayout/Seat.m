@@ -19,6 +19,7 @@
 		seat.columnNumber = [[obj objectForKey:@"ColumnNo"] integerValue];
 		seat.deckNumber = [[obj objectForKey:@"Deck"] integerValue];
 		seat.seatName = [obj objectForKey:@"SeatName"];
+		seat.seatFare = [obj objectForKey:@"SeatFare"];
 //		seat.seatType = [Seat seatTypeForString:[obj objectForKey:@"SeatType"]];
 //		seat.seatStatus;
 		[seats addObject:seat];

@@ -10,4 +10,9 @@
 
 @implementation PriceCell
 
+- (void)setSelected:(BOOL)selected {
+	[super setSelected:selected];
+	self.backgroundColor = selected ? [UIColor redColor] : [UIColor grayColor];
+}
+
 @end

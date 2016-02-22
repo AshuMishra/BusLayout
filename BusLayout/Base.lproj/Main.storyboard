@@ -292,6 +292,7 @@
                         <outlet property="priceCollectionView" destination="8FP-yz-WEt" id="4cj-Y5-Ss4"/>
                         <outlet property="segmentControl" destination="b4T-oY-Azd" id="xDL-wu-FIh"/>
                         <outlet property="upperSeatCollectionView" destination="SBa-tF-2or" id="1Gd-pY-6su"/>
+                        <outlet property="yConstraintsOfPriceCollectionView" destination="2CA-tL-sJ8" id="uPG-cy-yrm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

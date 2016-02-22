@@ -17,6 +17,7 @@
 //@property(nonatomic, assign) NSInteger SeatStatus;
 @property(nonatomic, assign) NSString *seatType;
 @property(nonatomic, assign) NSString *seatStatus;
+@property(nonatomic, assign) NSString *seatFare;
 
 + (NSArray *)seatsFromArray:(NSArray *)seatInfo;
 @end

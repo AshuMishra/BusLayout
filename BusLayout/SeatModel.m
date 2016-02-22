@@ -29,12 +29,10 @@
         seat.seat_Ladies = [[seatDict objectForKey:@"LSeat"]boolValue];
         seat.seat_RowType = [seatDict objectForKey:@"row_type"];
         seat.seat_ServiceTax = [[seatDict objectForKey:@"ServiceTax"]floatValue];
-
-		NSString *statusString = [seatDict objectForKey:@"seat_status"];
+//		NSString *statusString = [seatDict objectForKey:@"seat_status"];
 		seat.seat_Status = [[seatDict objectForKey:@"SeatStatus"]integerValue];
 		[seats addObject:seat];
 	}];
-
 	return seats;
 }
 
@@ -52,7 +50,6 @@
 	}else {
 		return SeatStatusBooked;
 	}
-
 }
 
 

@@ -18,6 +18,8 @@
 - (void)prepareForReuse {
 	[super prepareForReuse];
 	self.imageView.image = nil;
+	self.alpha = 1.0;
+	self.seatNameLabel.text = @"";
 }
 
 - (void)setSelected:(BOOL)selected {
@@ -29,6 +31,15 @@
 	}
 }
 
+- (void)setHighlighted:(BOOL)highlighted {
+	[super setHighlighted:highlighted];
+	if (self.type == SeatStatusNone) {
+		self.alpha = 1.0;
+	}else {
+		self.alpha = highlighted ? 1.0 : 0.5;
+	}
+}
+
 - (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name {
 	_type = type;
 	_status = status;
@@ -37,13 +48,7 @@
 	}else {
 		self.imageView.image = [self imageForSeatType:self.type status:self.status];
 	}
-	self.seatNameLabel.text = name;
-}
-
-- (void)awakeFromNib {
-	[super awakeFromNib];
-	self.layer.borderColor = [UIColor redColor].CGColor;
-	self.layer.borderWidth = 2.0;
+//	self.seatNameLabel.text = name;
 }
 
 - (UIImage *)imageForSeatType:(SeatType)type status:(SeatStatus) status {

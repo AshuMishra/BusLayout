@@ -31,5 +31,9 @@
 - (SeatStatus)seatCollectionView:(SeatCollectionView *)collectionView seatStatusforIndexPath: (NSIndexPath *)indexPath;
 - (NSString *)seatCollectionView:(SeatCollectionView *)collectionView seatNameforIndexPath: (NSIndexPath *)indexPath;
 - (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldSelectIndexPath: (NSIndexPath *)indexPath;
+- (void)seatCollectionView:(SeatCollectionView *)collectionView didSelectIndexPath: (NSIndexPath *)indexPath;
+- (void)seatCollectionView:(SeatCollectionView *)collectionView didDeselectIndexPath: (NSIndexPath *)indexPath;
+- (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldHighlightIndexPath: (NSIndexPath *)indexPath;
 
 @end
+

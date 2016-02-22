@@ -11,9 +11,14 @@
 
 @interface SeatLayoutController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UICollectionView *priceCollectionView;
 @property (weak, nonatomic) IBOutlet SeatCollectionView *lowerSeatCollectionView;
 @property (weak, nonatomic) IBOutlet SeatCollectionView *upperSeatCollectionView;
-@property (weak, nonatomic) IBOutlet UICollectionView *priceCollectionView;
+@property (nonatomic,retain) NSString * busKey;
+@property (weak, nonatomic) IBOutlet UILabel *travellerName;
+@property (nonatomic,retain) NSString * travelsName;
+@property (nonatomic, strong) NSMutableArray *priceArray;
+@property (nonatomic, strong) NSMutableArray *boardingPointArray;
 
 @end
 
