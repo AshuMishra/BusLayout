@@ -31,13 +31,13 @@
 	}
 }
 
-- (void)setHighlighted:(BOOL)highlighted {
-	[super setHighlighted:highlighted];
+- (void)addOverlay:(BOOL)add {
 	if (self.type == SeatStatusNone) {
 		self.alpha = 1.0;
 	}else {
-		self.alpha = highlighted ? 1.0 : 0.5;
+		self.alpha = add ? 1.0 : 0.5;
 	}
+
 }
 
 - (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name {

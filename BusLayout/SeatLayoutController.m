@@ -77,7 +77,6 @@
 	[self setNavigationBar];
 }
 
-
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
 	[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
@@ -199,6 +198,9 @@
 }
 
 - (void)updateSelectedPrice:(NSIndexPath *)indexPath {
+	if (self.selectedPriceIndex == 0) {
+		return;
+	}
 	SeatModel *seat = [self seatForIndexPath:indexPath];
 	NSIndexPath *selectedPriceIndexPath = [[self.priceCollectionView indexPathsForSelectedItems]firstObject];
 	NSString *selectedPrice = [self.priceArray objectAtIndex:selectedPriceIndexPath.item];

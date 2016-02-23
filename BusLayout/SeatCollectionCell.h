@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, SeatStatus) {
 @property (nonatomic, assign) SeatType type;
 @property (nonatomic, assign) SeatStatus status;
 
+- (void)addOverlay:(BOOL)add;
 - (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name;
 
 @end

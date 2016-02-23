@@ -110,7 +110,7 @@
 		cell.selected = NO;
 		status = [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
 	}
-	cell.highlighted = [self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath];
+	[cell addOverlay: [self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath]];
 
 	cell.type = type;
 	[cell setType:type status:status name:seatName];
@@ -137,21 +137,9 @@
 	BOOL shouldSelect = [self.datasource seatCollectionView:self shouldSelectIndexPath:indexPath];
 	SeatStatus status = [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
 	if ((status != SeatStatusAvailable || !shouldSelect) == NO) {
-		cell.highlighted = YES;
+		[cell addOverlay: YES];
 	}
 	return (status == SeatStatusAvailable) && shouldSelect;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-	if ([selectedArray containsObject:indexPath])  {
-		[selectedArray removeObject:indexPath];
-		SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
-		cell.selected = NO;
-		[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-		return YES;
-	} else {
-		return NO;
-	}
 }
 
 @end
