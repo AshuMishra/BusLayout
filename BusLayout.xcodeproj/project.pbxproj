@@ -7,63 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E1BC5ED1C74F65100E8F0A1 /* SeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */; };
-		4E2B632D1C72522E00D4CA3E /* Seat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B632C1C72522E00D4CA3E /* Seat.m */; };
-		4E2B63371C73B27000D4CA3E /* DriverSeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */; };
+		4EB857C21C884AC900431BA9 /* SeatLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857C11C884AC900431BA9 /* SeatLayoutController.m */; };
+		4EB857C51C884AD400431BA9 /* SeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857C41C884AD400431BA9 /* SeatModel.m */; };
+		4EB857D01C884AEB00431BA9 /* DriverSeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB857C61C884AEB00431BA9 /* DriverSeatView.xib */; };
+		4EB857D11C884AEB00431BA9 /* PriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857C81C884AEB00431BA9 /* PriceCell.m */; };
+		4EB857D21C884AEB00431BA9 /* SeatCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857CA1C884AEB00431BA9 /* SeatCollectionCell.m */; };
+		4EB857D31C884AEB00431BA9 /* SeatCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB857CB1C884AEB00431BA9 /* SeatCollectionCell.xib */; };
+		4EB857D41C884AEB00431BA9 /* SeatCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857CD1C884AEB00431BA9 /* SeatCollectionView.m */; };
+		4EB857D51C884AEB00431BA9 /* SeatFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB857CF1C884AEB00431BA9 /* SeatFlowLayout.m */; };
+		4EB857DD1C884BA600431BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB857DB1C884BA600431BA9 /* Assets.xcassets */; };
+		4EB857DE1C884BA600431BA9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB857DC1C884BA600431BA9 /* Info.plist */; };
 		4EED68171C6F72C100C6479A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68161C6F72C100C6479A /* main.m */; };
 		4EED681A1C6F72C100C6479A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68191C6F72C100C6479A /* AppDelegate.m */; };
-		4EED681D1C6F72C100C6479A /* SeatLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED681C1C6F72C100C6479A /* SeatLayoutController.m */; };
 		4EED68201C6F72C100C6479A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EED681E1C6F72C100C6479A /* Main.storyboard */; };
-		4EED68221C6F72C100C6479A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EED68211C6F72C100C6479A /* Assets.xcassets */; };
-		4EED68251C6F72C100C6479A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EED68231C6F72C100C6479A /* LaunchScreen.storyboard */; };
-		4EED68301C6F72C100C6479A /* BusLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED682F1C6F72C100C6479A /* BusLayoutTests.m */; };
-		4EED684D1C6F879200C6479A /* SeatCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED684C1C6F879200C6479A /* SeatCollectionView.m */; };
-		4EED68511C6FA11800C6479A /* SeatCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED684F1C6FA11800C6479A /* SeatCollectionCell.m */; };
-		4EED68521C6FA11800C6479A /* SeatCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EED68501C6FA11800C6479A /* SeatCollectionCell.xib */; };
-		4EED68541C6FA52C00C6479A /* SeatFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68531C6FA52C00C6479A /* SeatFlowLayout.m */; };
-		4EED685A1C70A7AC00C6479A /* PriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED68591C70A7AC00C6479A /* PriceCell.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4EED682C1C6F72C100C6479A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EED680A1C6F72C000C6479A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EED68111C6F72C000C6479A;
-			remoteInfo = BusLayout;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		4E1BC5EB1C74F65100E8F0A1 /* SeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeatModel.h; sourceTree = "<group>"; };
-		4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeatModel.m; sourceTree = "<group>"; };
-		4E2B632B1C72522E00D4CA3E /* Seat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seat.h; sourceTree = "<group>"; };
-		4E2B632C1C72522E00D4CA3E /* Seat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seat.m; sourceTree = "<group>"; };
-		4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriverSeatView.xib; sourceTree = "<group>"; };
+		4EB857C01C884AC200431BA9 /* SeatLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatLayoutController.h; path = Controllers/SeatLayoutController.h; sourceTree = "<group>"; };
+		4EB857C11C884AC900431BA9 /* SeatLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatLayoutController.m; path = Controllers/SeatLayoutController.m; sourceTree = "<group>"; };
+		4EB857C31C884AD400431BA9 /* SeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatModel.h; path = Models/SeatModel.h; sourceTree = "<group>"; };
+		4EB857C41C884AD400431BA9 /* SeatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatModel.m; path = Models/SeatModel.m; sourceTree = "<group>"; };
+		4EB857C61C884AEB00431BA9 /* DriverSeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DriverSeatView.xib; path = Views/DriverSeatView.xib; sourceTree = "<group>"; };
+		4EB857C71C884AEB00431BA9 /* PriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PriceCell.h; path = Views/PriceCell.h; sourceTree = "<group>"; };
+		4EB857C81C884AEB00431BA9 /* PriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PriceCell.m; path = Views/PriceCell.m; sourceTree = "<group>"; };
+		4EB857C91C884AEB00431BA9 /* SeatCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatCollectionCell.h; path = Views/SeatCollectionCell.h; sourceTree = "<group>"; };
+		4EB857CA1C884AEB00431BA9 /* SeatCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatCollectionCell.m; path = Views/SeatCollectionCell.m; sourceTree = "<group>"; };
+		4EB857CB1C884AEB00431BA9 /* SeatCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeatCollectionCell.xib; path = Views/SeatCollectionCell.xib; sourceTree = "<group>"; };
+		4EB857CC1C884AEB00431BA9 /* SeatCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatCollectionView.h; path = Views/SeatCollectionView.h; sourceTree = "<group>"; };
+		4EB857CD1C884AEB00431BA9 /* SeatCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatCollectionView.m; path = Views/SeatCollectionView.m; sourceTree = "<group>"; };
+		4EB857CE1C884AEB00431BA9 /* SeatFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeatFlowLayout.h; path = Views/SeatFlowLayout.h; sourceTree = "<group>"; };
+		4EB857CF1C884AEB00431BA9 /* SeatFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeatFlowLayout.m; path = Views/SeatFlowLayout.m; sourceTree = "<group>"; };
+		4EB857DB1C884BA600431BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EB857DC1C884BA600431BA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EED68121C6F72C000C6479A /* BusLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EED68161C6F72C100C6479A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EED68181C6F72C100C6479A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4EED68191C6F72C100C6479A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4EED681B1C6F72C100C6479A /* SeatLayoutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeatLayoutController.h; sourceTree = "<group>"; };
-		4EED681C1C6F72C100C6479A /* SeatLayoutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeatLayoutController.m; sourceTree = "<group>"; };
 		4EED681F1C6F72C100C6479A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4EED68211C6F72C100C6479A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4EED68241C6F72C100C6479A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4EED68261C6F72C100C6479A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EED682B1C6F72C100C6479A /* BusLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EED682F1C6F72C100C6479A /* BusLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusLayoutTests.m; sourceTree = "<group>"; };
-		4EED68311C6F72C100C6479A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EED683A1C6F72C100C6479A /* BusLayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusLayoutUITests.m; sourceTree = "<group>"; };
-		4EED683C1C6F72C100C6479A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EED684B1C6F879200C6479A /* SeatCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeatCollectionView.h; sourceTree = "<group>"; };
-		4EED684C1C6F879200C6479A /* SeatCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeatCollectionView.m; sourceTree = "<group>"; };
-		4EED684E1C6FA11800C6479A /* SeatCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeatCollectionCell.h; sourceTree = "<group>"; };
-		4EED684F1C6FA11800C6479A /* SeatCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeatCollectionCell.m; sourceTree = "<group>"; };
-		4EED68501C6FA11800C6479A /* SeatCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeatCollectionCell.xib; sourceTree = "<group>"; };
-		4EED68531C6FA52C00C6479A /* SeatFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeatFlowLayout.m; sourceTree = "<group>"; };
-		4EED68571C6FA58600C6479A /* SeatFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeatFlowLayout.h; sourceTree = "<group>"; };
-		4EED68581C70A7AC00C6479A /* PriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCell.h; sourceTree = "<group>"; };
-		4EED68591C70A7AC00C6479A /* PriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,22 +54,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4EED68281C6F72C100C6479A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EB857BF1C88497B00431BA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4EB857C31C884AD400431BA9 /* SeatModel.h */,
+				4EB857C41C884AD400431BA9 /* SeatModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4EED68091C6F72C000C6479A = {
 			isa = PBXGroup;
 			children = (
 				4EED68141C6F72C000C6479A /* BusLayout */,
-				4EED682E1C6F72C100C6479A /* BusLayoutTests */,
-				4EED68391C6F72C100C6479A /* BusLayoutUITests */,
 				4EED68131C6F72C000C6479A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				4EED68121C6F72C000C6479A /* BusLayout.app */,
-				4EED682B1C6F72C100C6479A /* BusLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,11 +85,12 @@
 		4EED68141C6F72C000C6479A /* BusLayout */ = {
 			isa = PBXGroup;
 			children = (
+				4EB857DB1C884BA600431BA9 /* Assets.xcassets */,
+				4EB857DC1C884BA600431BA9 /* Info.plist */,
 				4EED68481C6F72D500C6479A /* Delegate Files */,
 				4EED68491C6F72E500C6479A /* Controller files */,
+				4EB857BF1C88497B00431BA9 /* Model */,
 				4EED684A1C6F730000C6479A /* StoryBoard And Custom Views */,
-				4EED68211C6F72C100C6479A /* Assets.xcassets */,
-				4EED68261C6F72C100C6479A /* Info.plist */,
 				4EED68151C6F72C100C6479A /* Supporting Files */,
 			);
 			path = BusLayout;
@@ -122,24 +102,6 @@
 				4EED68161C6F72C100C6479A /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4EED682E1C6F72C100C6479A /* BusLayoutTests */ = {
-			isa = PBXGroup;
-			children = (
-				4EED682F1C6F72C100C6479A /* BusLayoutTests.m */,
-				4EED68311C6F72C100C6479A /* Info.plist */,
-			);
-			path = BusLayoutTests;
-			sourceTree = "<group>";
-		};
-		4EED68391C6F72C100C6479A /* BusLayoutUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4EED683A1C6F72C100C6479A /* BusLayoutUITests.m */,
-				4EED683C1C6F72C100C6479A /* Info.plist */,
-			);
-			path = BusLayoutUITests;
 			sourceTree = "<group>";
 		};
 		4EED68481C6F72D500C6479A /* Delegate Files */ = {
@@ -154,8 +116,8 @@
 		4EED68491C6F72E500C6479A /* Controller files */ = {
 			isa = PBXGroup;
 			children = (
-				4EED681B1C6F72C100C6479A /* SeatLayoutController.h */,
-				4EED681C1C6F72C100C6479A /* SeatLayoutController.m */,
+				4EB857C11C884AC900431BA9 /* SeatLayoutController.m */,
+				4EB857C01C884AC200431BA9 /* SeatLayoutController.h */,
 			);
 			name = "Controller files";
 			sourceTree = "<group>";
@@ -163,22 +125,17 @@
 		4EED684A1C6F730000C6479A /* StoryBoard And Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				4E1BC5EB1C74F65100E8F0A1 /* SeatModel.h */,
-				4E1BC5EC1C74F65100E8F0A1 /* SeatModel.m */,
+				4EB857C61C884AEB00431BA9 /* DriverSeatView.xib */,
+				4EB857C71C884AEB00431BA9 /* PriceCell.h */,
+				4EB857C81C884AEB00431BA9 /* PriceCell.m */,
+				4EB857C91C884AEB00431BA9 /* SeatCollectionCell.h */,
+				4EB857CA1C884AEB00431BA9 /* SeatCollectionCell.m */,
+				4EB857CB1C884AEB00431BA9 /* SeatCollectionCell.xib */,
+				4EB857CC1C884AEB00431BA9 /* SeatCollectionView.h */,
+				4EB857CD1C884AEB00431BA9 /* SeatCollectionView.m */,
+				4EB857CE1C884AEB00431BA9 /* SeatFlowLayout.h */,
+				4EB857CF1C884AEB00431BA9 /* SeatFlowLayout.m */,
 				4EED681E1C6F72C100C6479A /* Main.storyboard */,
-				4EED68231C6F72C100C6479A /* LaunchScreen.storyboard */,
-				4EED68581C70A7AC00C6479A /* PriceCell.h */,
-				4EED68591C70A7AC00C6479A /* PriceCell.m */,
-				4E2B632B1C72522E00D4CA3E /* Seat.h */,
-				4E2B632C1C72522E00D4CA3E /* Seat.m */,
-				4EED68571C6FA58600C6479A /* SeatFlowLayout.h */,
-				4EED68531C6FA52C00C6479A /* SeatFlowLayout.m */,
-				4EED684B1C6F879200C6479A /* SeatCollectionView.h */,
-				4EED684C1C6F879200C6479A /* SeatCollectionView.m */,
-				4EED684E1C6FA11800C6479A /* SeatCollectionCell.h */,
-				4EED684F1C6FA11800C6479A /* SeatCollectionCell.m */,
-				4EED68501C6FA11800C6479A /* SeatCollectionCell.xib */,
-				4E2B63361C73B27000D4CA3E /* DriverSeatView.xib */,
 			);
 			name = "StoryBoard And Custom Views";
 			sourceTree = "<group>";
@@ -203,24 +160,6 @@
 			productReference = 4EED68121C6F72C000C6479A /* BusLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4EED682A1C6F72C100C6479A /* BusLayoutTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4EED68421C6F72C100C6479A /* Build configuration list for PBXNativeTarget "BusLayoutTests" */;
-			buildPhases = (
-				4EED68271C6F72C100C6479A /* Sources */,
-				4EED68281C6F72C100C6479A /* Frameworks */,
-				4EED68291C6F72C100C6479A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4EED682D1C6F72C100C6479A /* PBXTargetDependency */,
-			);
-			name = BusLayoutTests;
-			productName = BusLayoutTests;
-			productReference = 4EED682B1C6F72C100C6479A /* BusLayoutTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -232,10 +171,6 @@
 				TargetAttributes = {
 					4EED68111C6F72C000C6479A = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					4EED682A1C6F72C100C6479A = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 4EED68111C6F72C000C6479A;
 					};
 				};
 			};
@@ -253,7 +188,6 @@
 			projectRoot = "";
 			targets = (
 				4EED68111C6F72C000C6479A /* BusLayout */,
-				4EED682A1C6F72C100C6479A /* BusLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,18 +197,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EED68521C6FA11800C6479A /* SeatCollectionCell.xib in Resources */,
-				4EED68251C6F72C100C6479A /* LaunchScreen.storyboard in Resources */,
-				4E2B63371C73B27000D4CA3E /* DriverSeatView.xib in Resources */,
-				4EED68221C6F72C100C6479A /* Assets.xcassets in Resources */,
+				4EB857D31C884AEB00431BA9 /* SeatCollectionCell.xib in Resources */,
+				4EB857D01C884AEB00431BA9 /* DriverSeatView.xib in Resources */,
+				4EB857DD1C884BA600431BA9 /* Assets.xcassets in Resources */,
+				4EB857DE1C884BA600431BA9 /* Info.plist in Resources */,
 				4EED68201C6F72C100C6479A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EED68291C6F72C100C6479A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,35 +212,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EED681D1C6F72C100C6479A /* SeatLayoutController.m in Sources */,
+				4EB857D11C884AEB00431BA9 /* PriceCell.m in Sources */,
+				4EB857D41C884AEB00431BA9 /* SeatCollectionView.m in Sources */,
+				4EB857C21C884AC900431BA9 /* SeatLayoutController.m in Sources */,
+				4EB857D21C884AEB00431BA9 /* SeatCollectionCell.m in Sources */,
 				4EED681A1C6F72C100C6479A /* AppDelegate.m in Sources */,
-				4EED68541C6FA52C00C6479A /* SeatFlowLayout.m in Sources */,
-				4E1BC5ED1C74F65100E8F0A1 /* SeatModel.m in Sources */,
 				4EED68171C6F72C100C6479A /* main.m in Sources */,
-				4EED685A1C70A7AC00C6479A /* PriceCell.m in Sources */,
-				4EED68511C6FA11800C6479A /* SeatCollectionCell.m in Sources */,
-				4E2B632D1C72522E00D4CA3E /* Seat.m in Sources */,
-				4EED684D1C6F879200C6479A /* SeatCollectionView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EED68271C6F72C100C6479A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4EED68301C6F72C100C6479A /* BusLayoutTests.m in Sources */,
+				4EB857D51C884AEB00431BA9 /* SeatFlowLayout.m in Sources */,
+				4EB857C51C884AD400431BA9 /* SeatModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4EED682D1C6F72C100C6479A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4EED68111C6F72C000C6479A /* BusLayout */;
-			targetProxy = 4EED682C1C6F72C100C6479A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4EED681E1C6F72C100C6479A /* Main.storyboard */ = {
@@ -322,14 +232,6 @@
 				4EED681F1C6F72C100C6479A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4EED68231C6F72C100C6479A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4EED68241C6F72C100C6479A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -371,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -409,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,30 +341,6 @@
 			};
 			name = Release;
 		};
-		4EED68431C6F72C100C6479A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BusLayoutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ashutosh.BusLayoutTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusLayout.app/BusLayout";
-			};
-			name = Debug;
-		};
-		4EED68441C6F72C100C6479A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BusLayoutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ashutosh.BusLayoutTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusLayout.app/BusLayout";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,15 +358,6 @@
 			buildConfigurations = (
 				4EED68401C6F72C100C6479A /* Debug */,
 				4EED68411C6F72C100C6479A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4EED68421C6F72C100C6479A /* Build configuration list for PBXNativeTarget "BusLayoutTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4EED68431C6F72C100C6479A /* Debug */,
-				4EED68441C6F72C100C6479A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

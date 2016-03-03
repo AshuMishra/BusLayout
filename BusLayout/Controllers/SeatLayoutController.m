@@ -8,7 +8,6 @@
 
 #import "SeatLayoutController.h"
 #import "PriceCell.h"
-#import "Seat.h"
 #import "SeatModel.h"
 #define MaximumAllowedSelection 6
 
