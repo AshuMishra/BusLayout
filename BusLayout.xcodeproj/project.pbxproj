@@ -116,8 +116,8 @@
 		4EED68491C6F72E500C6479A /* Controller files */ = {
 			isa = PBXGroup;
 			children = (
-				4EB857C11C884AC900431BA9 /* SeatLayoutController.m */,
 				4EB857C01C884AC200431BA9 /* SeatLayoutController.h */,
+				4EB857C11C884AC900431BA9 /* SeatLayoutController.m */,
 			);
 			name = "Controller files";
 			sourceTree = "<group>";

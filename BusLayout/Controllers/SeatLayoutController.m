@@ -25,7 +25,6 @@
 @property (nonatomic, strong) NSMutableArray *indexPathsForUpperSelectedSeats;
 @property (nonatomic, strong) NSMutableArray *indexPathsForLowerSelectedSeats;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yConstraintsOfPriceCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yConstraintsOfIndicatorView;
 @property (weak, nonatomic) IBOutlet UIView *seatIndicatorView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (assign, nonatomic) NSInteger selectedPriceIndex;
@@ -163,10 +162,20 @@
 
 - (void)seatCollectionView:(SeatCollectionView *)collectionView didSelectIndexPath:(NSIndexPath *)indexPath {
 	[self updateSelectedPrice:indexPath];
+	if(self.segmentControl.selectedSegmentIndex == 0) {
+		[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
+	} else {
+		[self.upperSeatCollectionView reloadSeatCollectionViewWithHeader:NO];
+	}
 }
 
 - (void)seatCollectionView:(SeatCollectionView *)collectionView didDeselectIndexPath:(NSIndexPath *)indexPath {
 	[self updateSelectedPrice:indexPath];
+	if(self.segmentControl.selectedSegmentIndex == 0) {
+		[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
+	} else {
+		[self.upperSeatCollectionView reloadSeatCollectionViewWithHeader:NO];
+	}
 }
 
 - (void)updateSelectedPrice:(NSIndexPath *)indexPath {
