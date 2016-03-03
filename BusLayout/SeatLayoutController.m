@@ -93,8 +93,6 @@
 	NSArray *onwardSeats = [data objectForKey:@"onwardSeats"];
 //	NSLog(@"onwardSeats = %@", onwardSeats);
 	seatsArray = [SeatModel seatsFromArray:onwardSeats];
-//	seatsArray = [SeatModel seatsFromArray:seatListArray];
-	NSLog(@"seats = %@", seatsArray);
 
 	self.lowerSeatsArr = [seatsArray filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"seat_Deck == 1"]];
 	SeatModel *seatObj = self.lowerSeatsArr.lastObject;
@@ -156,7 +154,7 @@
 - (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldHighlightIndexPath:(NSIndexPath *)indexPath {
 	NSString *selectedPrice = [self.priceArray objectAtIndex:self.selectedPriceIndex];
 	if ([selectedPrice isEqualToString:@"All"]) {
-		return YES;
+		return NO;
 	}else {
 		SeatModel *seat = [self seatForIndexPath:indexPath];
 		NSString *priceValue = [[NSNumber numberWithFloat:seat.seat_Fare] stringValue];
@@ -180,20 +178,13 @@
 	NSIndexPath *selectedPriceIndexPath = [[self.priceCollectionView indexPathsForSelectedItems]firstObject];
 	NSString *selectedPrice = [self.priceArray objectAtIndex:selectedPriceIndexPath.item];
 	NSString *priceValue = [[NSNumber numberWithFloat:seat.seat_Fare] stringValue];
-	if([priceValue isEqualToString:selectedPrice]) {
-		// do nothing
-	} else {
+	if(![priceValue isEqualToString:selectedPrice]) {
 		NSInteger index = [self.priceArray indexOfObjectWithOptions:NSEnumerationReverse passingTest:^BOOL(NSString *obj, NSUInteger idx, BOOL * _Nonnull stop) {
 			return [obj isEqualToString:priceValue];
 		}];
-		self.selectedPriceIndex = index;
-		NSLog(@"selected %ld", (long)self.selectedPriceIndex);
-		[self.priceCollectionView reloadData];
-
-		if (self.segmentControl.selectedSegmentIndex == 0) {
-			[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
-		}else {
-			[self.upperSeatCollectionView reloadSeatCollectionViewWithHeader:NO];
+		if (index != NSNotFound && index != self.selectedPriceIndex) {
+			self.selectedPriceIndex = index;
+			[self.priceCollectionView reloadData];
 		}
 	}
 }
@@ -211,11 +202,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	PriceCell *priceCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"priceCell" forIndexPath:indexPath];
 	priceCell.priceLabel.text = [priceArray objectAtIndex:indexPath.row];
-	if(indexPath.item == self.selectedPriceIndex) {
-		priceCell.backgroundColor = [UIColor redColor];
-	}else {
-		priceCell.backgroundColor = [UIColor lightGrayColor];
-	}	priceCell.priceLabel.textColor = [UIColor whiteColor];
+	priceCell.selected = indexPath.item == self.selectedPriceIndex;
+	priceCell.priceLabel.textColor = [UIColor whiteColor];
 	priceCell.layer.cornerRadius = priceCell.frame.size.width/2;
 	priceCell.layer.masksToBounds = YES;
 	return priceCell;
@@ -223,23 +211,21 @@
 
 
 - (void)collectionView: (UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-	PriceCell *cell = (PriceCell *)[self.priceCollectionView cellForItemAtIndexPath:indexPath];
-	PriceCell *prevCell = (PriceCell *)[self.priceCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.selectedPriceIndex inSection:0]];
+	if (indexPath.item == self.selectedPriceIndex) { return; }
+	NSIndexPath *prevIndexPath = [NSIndexPath indexPathForItem:self.selectedPriceIndex inSection:0];
+	[collectionView deselectItemAtIndexPath:prevIndexPath animated:NO];
 	self.selectedPriceIndex = indexPath.item;
-	cell.selected = YES;
-	prevCell.selected = NO;
+	[collectionView reloadItemsAtIndexPaths:@[indexPath, prevIndexPath]];
 	if (self.segmentControl.selectedSegmentIndex == 0) {
 		[self.lowerSeatCollectionView reloadSeatCollectionViewWithHeader:YES];
 	}else {
 		[self.upperSeatCollectionView reloadSeatCollectionViewWithHeader:NO];
 	}
-
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
 	NSInteger cellCount = [collectionView.dataSource collectionView:collectionView numberOfItemsInSection:section];
-	if( cellCount > 0 )
-	{
+	if( cellCount > 0 ) {
 		CGFloat cellWidth = ((UICollectionViewFlowLayout*)collectionViewLayout).itemSize.width+((UICollectionViewFlowLayout*)collectionViewLayout).minimumInteritemSpacing;
 		CGFloat totalCellWidth = cellWidth*cellCount;
 		CGFloat contentWidth = collectionView.frame.size.width-collectionView.contentInset.left-collectionView.contentInset.right;

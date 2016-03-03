@@ -105,10 +105,10 @@
 	}
 	else {
 		cell.selected = NO;
-		[self.datasource seatCollectionView:self didDeselectIndexPath:indexPath];
+		[collectionView deselectItemAtIndexPath:indexPath animated:NO];
 	}
 	[cell configureWithSeat:[self.datasource seatCollectionView:self seatForIndexPath:indexPath]];
-	[cell addOverlay: [self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath]];
+	[cell addOverlay: ![self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath]];
 	return cell;
 }
 
