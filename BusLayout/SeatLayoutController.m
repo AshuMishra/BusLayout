@@ -154,7 +154,7 @@
 - (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldHighlightIndexPath:(NSIndexPath *)indexPath {
 	NSString *selectedPrice = [self.priceArray objectAtIndex:self.selectedPriceIndex];
 	if ([selectedPrice isEqualToString:@"All"]) {
-		return NO;
+		return YES;
 	}else {
 		SeatModel *seat = [self seatForIndexPath:indexPath];
 		NSString *priceValue = [[NSNumber numberWithFloat:seat.seat_Fare] stringValue];
