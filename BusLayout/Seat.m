@@ -34,4 +34,6 @@
 	else return SeatTypeNone;
 }
 
+
+
 @end

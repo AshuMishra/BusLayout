@@ -51,20 +51,20 @@
 	if (indexPath.item != 0){
 		prevIndexPath = [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
 	}
-
 	if (prevIndexPath!= nil) {
-		SeatType prevType = [self.datasource seatCollectionView:self seatTypeforIndexPath:prevIndexPath];
+		SeatModel *seat = [self.datasource seatCollectionView:self seatForIndexPath:prevIndexPath];
+		SeatType prevType = seat.seat_Type;
 		if (prevType == SeatTypeSleeper) {
 			return CGSizeZero;
 		}
 		else {
-			SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
-			return CGSizeMake(50, type == SeatTypeSleeper ? 100 : 50);
+			SeatModel *seat = [self.datasource seatCollectionView:self seatForIndexPath:indexPath];
+			return CGSizeMake(50, seat.seat_Type == SeatTypeSleeper ? 100 : 50);
 		}
 	}
 	else {
-		SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
-		return CGSizeMake(50, type == SeatTypeSleeper ? 100 : 50);
+		SeatModel *seat = [self.datasource seatCollectionView:self seatForIndexPath:indexPath];
+		return CGSizeMake(50, seat.seat_Type == SeatTypeSleeper ? 100 : 50);
 	}
 
 }
@@ -99,21 +99,19 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"seatCell" forIndexPath:indexPath];
-	NSString *seatName = [self.datasource seatCollectionView:self seatNameforIndexPath:indexPath];
-	SeatType type = [self.datasource seatCollectionView:self seatTypeforIndexPath:indexPath];
-	SeatStatus status= [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
+//	NSString *seatName = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seat_Name;
+//	SeatType type = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seat_Type;
+//	SeatStatus status = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seatStatus;
 	if ([selectedArray containsObject:indexPath]) {
 		cell.selected = YES;
-		[self.collectionView  selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+//		[self.collectionView  selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
 	}
 	else {
 		cell.selected = NO;
-		status = [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
+//		status = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seatStatus;
 	}
+	[cell configureWithSeat:[self.datasource seatCollectionView:self seatForIndexPath:indexPath]];
 	[cell addOverlay: [self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath]];
-
-	cell.type = type;
-	[cell setType:type status:status name:seatName];
 	return cell;
 }
 
@@ -132,14 +130,8 @@
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
-
 	BOOL shouldSelect = [self.datasource seatCollectionView:self shouldSelectIndexPath:indexPath];
-	SeatStatus status = [self.datasource seatCollectionView:self seatStatusforIndexPath:indexPath];
-	if ((status != SeatStatusAvailable || !shouldSelect) == NO) {
-		[cell addOverlay: YES];
-	}
-	return (status == SeatStatusAvailable) && shouldSelect;
+	return shouldSelect;
 }
 
 @end

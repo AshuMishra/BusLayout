@@ -11,6 +11,7 @@
 #import "SeatModel.h"
 
 @protocol SeatCollectionViewDatasource;
+@class SeatModel;
 
 @interface SeatCollectionView : UIView
 
@@ -26,10 +27,7 @@
 
 - (NSInteger)numberOfSections;
 - (NSInteger)maximumNumberOfItemsPerSection;
-
-- (SeatType)seatCollectionView:(SeatCollectionView *)collectionView seatTypeforIndexPath: (NSIndexPath *)indexPath;
-- (SeatStatus)seatCollectionView:(SeatCollectionView *)collectionView seatStatusforIndexPath: (NSIndexPath *)indexPath;
-- (NSString *)seatCollectionView:(SeatCollectionView *)collectionView seatNameforIndexPath: (NSIndexPath *)indexPath;
+- (SeatModel *)seatCollectionView:(SeatCollectionView *)collectionView seatForIndexPath: (NSIndexPath *)indexPath;
 - (BOOL)seatCollectionView:(SeatCollectionView *)collectionView shouldSelectIndexPath: (NSIndexPath *)indexPath;
 - (void)seatCollectionView:(SeatCollectionView *)collectionView didSelectIndexPath: (NSIndexPath *)indexPath;
 - (void)seatCollectionView:(SeatCollectionView *)collectionView didDeselectIndexPath: (NSIndexPath *)indexPath;

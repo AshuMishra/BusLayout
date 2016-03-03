@@ -7,26 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSInteger, SeatType) {
-	SeatTypeNone,
-	SeatTypeSeater,
-	SeatTypeSleeper
-};
-
-typedef NS_ENUM(NSInteger, SeatStatus) {
-	SeatStatusAvailable,
-	SeatStatusLadies,
-	SeatStatusBooked,
-	SeatStatusNone
-};
+#import "SeatModel.h"
 
 @interface SeatCollectionCell : UICollectionViewCell
 
 @property (nonatomic, assign) SeatType type;
-@property (nonatomic, assign) SeatStatus status;
+//@property (nonatomic, assign) SeatStatus status;
+@property (nonatomic, assign) BOOL isAvailable;
 
 - (void)addOverlay:(BOOL)add;
-- (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name;
+//- (void)setType:(SeatType)type status:(SeatStatus)status name:(NSString *)name;
+
+- (void)configureWithSeat:(SeatModel *)seat;
 
 @end

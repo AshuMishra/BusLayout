@@ -31,6 +31,8 @@
         seat.seat_ServiceTax = [[seatDict objectForKey:@"ServiceTax"]floatValue];
 //		NSString *statusString = [seatDict objectForKey:@"seat_status"];
 		seat.seat_Status = [[seatDict objectForKey:@"SeatStatus"]integerValue];
+
+		seat.seat_isBooked = seat.seat_Status == 0;
 		[seats addObject:seat];
 	}];
 	return seats;
@@ -42,15 +44,22 @@
 	else return SeatTypeNone;
 }
 
-- (SeatStatus)seatStatus {
-	if(self.seat_Ladies == YES) {
-		return SeatStatusLadies;
-	}else if (self.seat_Status == 1) {
-		return SeatStatusAvailable;
-	}else {
-		return SeatStatusBooked;
-	}
-}
+//- (SeatStatus)seatStatus {
+//	if(self.seat_Ladies == YES) {
+//		return SeatStatusLadies;
+//	}else if (self.seat_Status == 1) {
+//		return SeatStatusAvailable;
+//	}else {
+//		return SeatStatusBooked;
+//	}
+//}
 
+//- (BOOL)shouldSelect {
+//	if (self.seatStatus == SeatStatusBooked || self.seatStatus == SeatStatusNone) {
+//		return NO;
+//	} else {
+//		return YES;
+//	}
+//}
 
 @end

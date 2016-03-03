@@ -7,8 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SeatCollectionView.h"
 
+typedef NS_ENUM(NSInteger, SeatType) {
+	SeatTypeNone,
+	SeatTypeSeater,
+	SeatTypeSleeper
+};
+
+//typedef NS_ENUM(NSInteger, SeatStatus) {
+//	SeatStatusAvailable,
+//	SeatStatusLadies,
+//	SeatStatusBooked,
+//	SeatStatusNone
+//};
 
 @interface SeatModel : NSObject
 
@@ -23,10 +34,11 @@
 @property(nonatomic, assign) SeatType seat_Type;
 
 @property(nonatomic, assign) BOOL seat_Ladies;
+@property(nonatomic, assign) BOOL seat_isBooked;
 @property (nonatomic, assign) float seat_Fare;
 @property (nonatomic, assign) NSString *seat_RowType;
 @property (nonatomic, assign) float seat_ServiceTax;
 
 + (NSArray *)seatsFromArray:(NSArray *)seatInfo;
-- (SeatStatus)seatStatus;
+//- (SeatStatus)seatStatus;
 @end
