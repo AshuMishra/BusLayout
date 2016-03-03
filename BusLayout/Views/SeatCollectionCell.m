@@ -25,11 +25,7 @@
 
 - (void)configureWithSeat:(SeatModel *)seat {
 	self.seat = seat;
-	if (self.selected) {
-		self.imageView.image = [UIImage imageNamed:@"seat-selected"];
-	} else {
-		self.imageView.image = [self imageForSeat:seat];
-	}
+	self.imageView.image = [self imageForSeat:seat];
 	self.seatNameLabel.text = [NSString stringWithFormat:@"%@", self.seat.seat_Name];
 	self.userInteractionEnabled = self.seat != nil && self.seat.seat_isBooked == NO;
 }
@@ -49,14 +45,18 @@
 
 - (UIImage *)imageForSeat:(SeatModel *)seat {
 	if(seat.seat_Type == SeatTypeSeater) {
-		if(seat.seat_isBooked) {
+		if(self.selected) {
+			return [UIImage imageNamed:@"seat-selected"];
+		} else if(seat.seat_isBooked) {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"seat-ladies-inactive"] : [UIImage imageNamed:@"seat-inactive"];
 		} else {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"seat-ladies"] : [UIImage imageNamed:@"seat-active"];
 		}
 
 	}else if (seat.seat_Type == SeatTypeSleeper) {
-		if(seat.seat_isBooked) {
+		if(self.selected) {
+			return [UIImage imageNamed:@"sleeper-selected"];
+		} else if(seat.seat_isBooked) {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"sleeper-ladies-inactive"] : [UIImage imageNamed:@"sleeper-inactive"];
 		} else {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"sleeper-ladies"] : [UIImage imageNamed:@"sleeper-active"];
