@@ -44,22 +44,4 @@
 	else return SeatTypeNone;
 }
 
-//- (SeatStatus)seatStatus {
-//	if(self.seat_Ladies == YES) {
-//		return SeatStatusLadies;
-//	}else if (self.seat_Status == 1) {
-//		return SeatStatusAvailable;
-//	}else {
-//		return SeatStatusBooked;
-//	}
-//}
-
-//- (BOOL)shouldSelect {
-//	if (self.seatStatus == SeatStatusBooked || self.seatStatus == SeatStatusNone) {
-//		return NO;
-//	} else {
-//		return YES;
-//	}
-//}
-
 @end

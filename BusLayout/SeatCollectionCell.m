@@ -50,14 +50,14 @@
 - (UIImage *)imageForSeat:(SeatModel *)seat {
 	if(seat.seat_Type == SeatTypeSeater) {
 		if(seat.seat_isBooked) {
-			return seat.seat_Ladies ? [UIImage imageNamed:@"seat-ladies"] : [UIImage imageNamed:@"seat-inactive"];
+			return seat.seat_Ladies ? [UIImage imageNamed:@"seat-ladies-inactive"] : [UIImage imageNamed:@"seat-inactive"];
 		} else {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"seat-ladies"] : [UIImage imageNamed:@"seat-active"];
 		}
 
 	}else if (seat.seat_Type == SeatTypeSleeper) {
 		if(seat.seat_isBooked) {
-			return seat.seat_Ladies ? [UIImage imageNamed:@"sleeper-ladies"] : [UIImage imageNamed:@"sleeper-inactive"];
+			return seat.seat_Ladies ? [UIImage imageNamed:@"sleeper-ladies-inactive"] : [UIImage imageNamed:@"sleeper-inactive"];
 		} else {
 			return seat.seat_Ladies ? [UIImage imageNamed:@"sleeper-ladies"] : [UIImage imageNamed:@"sleeper-active"];
 		}
