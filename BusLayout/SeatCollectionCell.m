@@ -30,26 +30,17 @@
 	} else {
 		self.imageView.image = [self imageForSeat:seat];
 	}
-//	self.alpha = seat.seat_Ladies && seat.seat_isBooked ? 1 : 1;
-	if (self.seat.seat_isBooked && self.seat.seat_Ladies) {
-		NSLog(@"both");
-	}
 	self.seatNameLabel.text = [NSString stringWithFormat:@"%@", self.seat.seat_Name];
 	self.userInteractionEnabled = self.seat != nil && self.seat.seat_isBooked == NO;
 }
 
 - (void)setSelected:(BOOL)selected {
 	[super setSelected:selected];
-	if (selected) {
-		self.imageView.image = [UIImage imageNamed:@"seat-selected"];
-	}else {
-		self.imageView.image = [self imageForSeat:self.seat];
-	}
+	[self configureWithSeat:self.seat];
 }
 
 - (void)addOverlay:(BOOL)add {
 	if (self.seat == nil) {
-		NSLog(@"nil");
 		self.alpha = 1.0;
 	} else {
 		self.alpha = add ? 1.0 : 0.5;

@@ -187,7 +187,7 @@
 			return [obj isEqualToString:priceValue];
 		}];
 		self.selectedPriceIndex = index;
-		NSLog(@"selected %d", self.selectedPriceIndex);
+		NSLog(@"selected %ld", (long)self.selectedPriceIndex);
 		[self.priceCollectionView reloadData];
 
 		if (self.segmentControl.selectedSegmentIndex == 0) {

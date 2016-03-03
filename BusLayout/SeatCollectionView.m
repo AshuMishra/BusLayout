@@ -99,16 +99,13 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"seatCell" forIndexPath:indexPath];
-//	NSString *seatName = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seat_Name;
-//	SeatType type = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seat_Type;
-//	SeatStatus status = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seatStatus;
 	if ([selectedArray containsObject:indexPath]) {
 		cell.selected = YES;
-//		[self.collectionView  selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+		[collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
 	}
 	else {
 		cell.selected = NO;
-//		status = [self.datasource seatCollectionView:self seatForIndexPath:indexPath].seatStatus;
+		[self.datasource seatCollectionView:self didDeselectIndexPath:indexPath];
 	}
 	[cell configureWithSeat:[self.datasource seatCollectionView:self seatForIndexPath:indexPath]];
 	[cell addOverlay: [self.datasource seatCollectionView:self shouldHighlightIndexPath:indexPath]];
@@ -126,12 +123,11 @@
 	SeatCollectionCell *cell = (SeatCollectionCell *)[collectionView cellForItemAtIndexPath: indexPath];
 	cell.selected = NO;
 	[selectedArray removeObject:indexPath];
-	[self.datasource seatCollectionView:self didDeselectIndexPath:indexPath];
+	[collectionView deselectItemAtIndexPath:indexPath animated:NO];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	BOOL shouldSelect = [self.datasource seatCollectionView:self shouldSelectIndexPath:indexPath];
-	return shouldSelect;
+	return [self.datasource seatCollectionView:self shouldSelectIndexPath:indexPath];
 }
 
 @end
