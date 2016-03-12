@@ -26,7 +26,7 @@
 - (void)configureWithSeat:(SeatModel *)seat {
 	self.seat = seat;
 	self.imageView.image = [self imageForSeat:seat];
-	self.seatNameLabel.text = [NSString stringWithFormat:@"%@", self.seat.seat_Name];
+//	self.seatNameLabel.text = [NSString stringWithFormat:@"%@", self.seat.seat_Name];
 	self.userInteractionEnabled = self.seat != nil && self.seat.seat_isBooked == NO;
 }
 

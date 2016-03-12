@@ -243,6 +243,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-Vc-xmI" customClass="SeatCollectionView">
                                 <rect key="frame" x="0.0" y="204" width="600" height="332"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="OWa-sm-8Pt"/>
+                                </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBa-tF-2or" customClass="SeatCollectionView">
                                 <rect key="frame" x="0.0" y="204" width="600" height="332"/>
@@ -265,6 +268,7 @@
                             <constraint firstAttribute="trailing" secondItem="Qbp-Vc-xmI" secondAttribute="trailing" id="A8D-Fb-OCv"/>
                             <constraint firstItem="SBa-tF-2or" firstAttribute="leading" secondItem="Qbp-Vc-xmI" secondAttribute="leading" id="Dfi-hC-25V"/>
                             <constraint firstItem="Lva-Yo-V70" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Fq6-1V-zKP"/>
+                            <constraint firstItem="Qbp-Vc-xmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GG1-H3-X80"/>
                             <constraint firstAttribute="trailing" secondItem="b4T-oY-Azd" secondAttribute="trailing" id="HLg-bD-I2A"/>
                             <constraint firstItem="SBa-tF-2or" firstAttribute="top" secondItem="Qbp-Vc-xmI" secondAttribute="top" id="LEV-6S-B9r"/>
                             <constraint firstItem="gQP-TL-bll" firstAttribute="height" secondItem="trZ-57-5LF" secondAttribute="height" id="Nuo-9p-uwG"/>
@@ -284,10 +288,17 @@
                             <constraint firstItem="SBa-tF-2or" firstAttribute="bottom" secondItem="Qbp-Vc-xmI" secondAttribute="bottom" id="tkn-w1-cxb"/>
                             <constraint firstItem="gQP-TL-bll" firstAttribute="leading" secondItem="trZ-57-5LF" secondAttribute="trailing" id="xvX-0Z-ULW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Yp-uQ-b8V"/>
+                                <exclude reference="A8D-Fb-OCv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Select your seat" id="e9W-VO-oal"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="collectionViewWidthConstraint" destination="OWa-sm-8Pt" id="0dY-SU-Fcc"/>
                         <outlet property="lowerSeatCollectionView" destination="Qbp-Vc-xmI" id="xHj-29-LpO"/>
                         <outlet property="priceCollectionView" destination="8FP-yz-WEt" id="4cj-Y5-Ss4"/>
                         <outlet property="segmentControl" destination="b4T-oY-Azd" id="xDL-wu-FIh"/>
